@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="mk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Потврда на нарачката</title>
+    <link rel="stylesheet" href="../css/confirmation.css">
+    <!-- EmailJS библиотека за испраќање вистински мејлови од frontend -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="../javascript/confirmation.js" defer></script>
+</head>
+<body>
+<nav>
+    <ul>
+        <li><a href="index.html">Почетна</a></li>
+        <li><a href="about.html">За нас</a></li>
+        <li><a href="#footer">Контакт</a></li>
+    </ul>
+</nav>
+<br>
+
+<main>
+    <div class="confirmation-container">
+        <h2 id="form-header">Потврда на нарачката</h2>
+        <p>Ве молиме внесете ги вашите податоци за да ја завршите нарачката.</p>
+
+        <form id="order-form">
+            <div class="form-group">
+                <label for="fullName">Име и презиме:</label>
+                <input type="text" id="fullName" name="fullName" placeholder="Тест Тестовски" required>
+                <small class="error-message" id="name-error"></small>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Е-пошта:</label>
+                <input type="email" id="email" name="email" placeholder="testtestovski@email.com" required>
+                <small class="error-message" id="email-error"></small>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Телефон за контакт:</label>
+                <input type="tel" id="phone" name="phone" placeholder="07X XXX XXX" required>
+                <small class="error-message" id="phone-error"></small>
+            </div>
+
+            <div class="form-group">
+                <label for="address">Адреса за достава:</label>
+                <input type="text" id="address" name="address" placeholder="Ул. Партизански Одреди бр. 10, Скопје" required>
+                <small class="error-message" id="address-error"></small>
+            </div>
+
+            <button type="submit" id="submit-btn" class="submit-btn">Потврди и испрати</button>
+        </form>
+    </div>
+</main>
+
+<footer id="footer">
+    <div>Е-пошта:</div>
+    <div>shepa@gmail.com</div>
+    <br>
+    <div>Контакт телефон:</div>
+    <div>070 294 376</div>
+    <div>076 493 308</div>
+    <br>
+    <div id="copyright">Copyright © 2026 ШЕПА Сите права се задржани</div>
+</footer>
+
+</body>
+</html>

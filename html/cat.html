@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пакет за маче</title>
+    <link rel="stylesheet" href="../css/cat.css">
+    <script src="../javascript/shop-core.js"></script>
+    <script src="../javascript/cat.js"></script>
+</head>
+<body>
+<div class="side-wall-panel left">
+    <div class="moulding-frame"></div>
+    <div class="moulding-frame" style="height: 25vh;"></div>
+</div>
+
+<div class="main-wrapper">
+    <nav>
+        <ul>
+            <li><a href="index.html">Почетна</a></li>
+            <li><a href="about.html">За нас</a></li>
+            <li><a href="#footer">Контакт</a></li>
+        </ul>
+    </nav>
+    <br>
+    <main>
+        <div>
+            <img src="../images/cat.png" height="120px"/>
+        </div>
+        <div>
+            <p>Одбери ги омилените работи и изненади го твојот миленик!</p>
+            <br>
+            <p>НАПОМЕНА: одбери минимум 3 ставки</p>
+        </div>
+
+        <div id="items-container" class="button-group"></div>
+
+        <div id="size-section" style="display: none; margin-top: 20px;">
+            <p>Избери големина:</p>
+            <div id="sizes-container" class="button-group"></div>
+        </div>
+
+        <div class="package-wrapper">
+            <div class="package-box">
+                <div class="package-header">📦 ПАКЕТ</div>
+                <div id="package-content" class="package-content">
+                    <p class="empty-msg">Пакетот е празен. Додај ги омилените работи!</p>
+                </div>
+            </div>
+            <p id="total-price" style="font-weight: bold; font-size: 1.2rem; margin-top: 15px;">Вкупно: 300 ден.</p>
+
+            <button id="checkout-btn" class="checkout-btn" disabled>Заврши нарачка</button>
+        </div>
+    </main>
+    <footer id="footer">
+        <div>Е-пошта:</div>
+        <div>shepa@gmail.com</div>
+        <br>
+        <div>Контакт телефон:</div>
+        <div>070 294 376</div>
+        <div>076 493 308</div>
+        <br>
+        <div id="copyright">Copyright © 2026 ШЕПА Сите права се задржани</div>
+    </footer>
+</div>
+
+<!-- Десната страна - фиксен ѕид со рамки -->
+<div class="side-wall-panel right">
+    <div class="moulding-frame"></div>
+    <div class="moulding-frame" style="height: 25vh;"></div>
+</div>
+</body>
+</html>

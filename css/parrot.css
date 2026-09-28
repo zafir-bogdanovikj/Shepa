@@ -1,0 +1,1005 @@
+/*:root {*/
+/*    !* Главна палета базирана на #C8D6E3 *!*/
+/*    --primary-color: #5B82A6;       !* Главна темно-сина/сива боја за копчиња и бордери *!*/
+/*    --primary-dark: #3A5A78;        !* Потемна нијанса за hover и наслови *!*/
+/*    --bg-main: #F2F6FA;             !* Светла позадина на целата страница *!*/
+/*    --bg-card: #E8EFF5;             !* Позадина за пакетот / елементите *!*/
+/*    --accent-bg: #C8D6E3;           !* Главната боја за навигација и футер *!*/
+/*    --text-color: #2C3E50;          !* Боја на текстот *!*/
+/*    --text-light: #FFFFFF;          !* Бела боја за текст врз темна позадина *!*/
+/*    --price-color: #D97706;         !* Боја за цените *!*/
+/*    --disabled-bg: #CCCCCC;        !* Боја за оневозможени копчиња *!*/
+/*}*/
+
+/*html {*/
+/*    scroll-behavior: smooth;*/
+/*}*/
+
+/*@media (max-width: 768px) {*/
+/*    * {*/
+/*        margin: 0;*/
+/*        padding: 0;*/
+/*        box-sizing: border-box;*/
+/*        text-align: center;*/
+/*        color: var(--text-color);*/
+/*        text-decoration: none;*/
+/*    }*/
+
+/*    body {*/
+/*        background-color: var(--bg-main);*/
+/*        display: flex;*/
+/*        flex-direction: column;*/
+/*        min-height: 100vh;*/
+/*    }*/
+
+/*    main {*/
+/*        flex: 1;*/
+/*        padding: 10px;*/
+/*    }*/
+
+/*    nav {*/
+/*        ul {*/
+/*            background-color: var(--accent-bg);*/
+/*            list-style: none;*/
+/*            display: flex;*/
+/*            margin: 0;*/
+/*            padding: 0;*/
+/*            justify-content: space-around;*/
+
+/*            li {*/
+/*                background-color: var(--accent-bg);*/
+/*                padding: 10px;*/
+
+/*                a {*/
+/*                    background-color: var(--accent-bg);*/
+/*                    color: var(--primary-dark);*/
+/*                    font-weight: 600;*/
+/*                }*/
+/*            }*/
+/*        }*/
+/*    }*/
+
+/*    h2 {*/
+/*        padding: 20px 0 10px 0;*/
+/*        color: var(--primary-dark);*/
+/*    }*/
+
+/*    .item {*/
+/*        img {*/
+/*            border: 1px solid var(--primary-color);*/
+/*            border-radius: 5px;*/
+/*        }*/
+/*    }*/
+
+/*    !* === СТИЛОВИ ЗА КОПЧИЊАТА (JS ДЕЛ) === *!*/
+
+/*    .button-group {*/
+/*        padding: 5px;*/
+/*        display: flex;*/
+/*        justify-content: center;*/
+/*        gap: 12px;*/
+/*        flex-wrap: wrap;*/
+/*        margin: 15px 0;*/
+/*    }*/
+
+/*    !* Копчиња за артиклите (Играчка, Кафез, Храна...) *!*/
+/*    .item-btn {*/
+/*        display: inline-flex;*/
+/*        align-items: center;*/
+/*        justify-content: center;*/
+/*        gap: 8px;*/
+/*        padding: 10px 18px;*/
+/*        border: 2px solid var(--primary-color);*/
+/*        background-color: #FFFFFF;*/
+/*        color: var(--primary-color);*/
+/*        border-radius: 8px;*/
+/*        cursor: pointer;*/
+/*        font-weight: bold;*/
+/*        transition: all 0.2s ease;*/
+
+/*        span {*/
+/*            color: inherit;*/
+/*        }*/
+
+/*        svg {*/
+/*            display: block;*/
+/*        }*/
+/*    }*/
+
+/*    .item-btn:hover {*/
+/*        background-color: rgba(91, 130, 166, 0.15);*/
+/*    }*/
+
+/*    !* Селектирано копче за артикл *!*/
+/*    .item-btn.active {*/
+/*        background-color: var(--primary-color);*/
+/*        color: var(--text-light);*/
+
+/*        span {*/
+/*            color: var(--text-light);*/
+/*        }*/
+/*    }*/
+
+/*    !* Копчиња за големини (Мала, Средна, Голема) *!*/
+/*    .size-btn {*/
+/*        padding: 8px 16px;*/
+/*        border: 1px solid var(--primary-color);*/
+/*        background-color: #FFFFFF;*/
+/*        color: var(--primary-color);*/
+/*        border-radius: 6px;*/
+/*        cursor: pointer;*/
+/*        font-weight: 500;*/
+/*        transition: all 0.2s ease;*/
+/*    }*/
+
+/*    .size-btn.active,*/
+/*    .size-btn:hover {*/
+/*        background-color: var(--primary-color);*/
+/*        color: var(--text-light);*/
+/*    }*/
+
+/*    .action-btn {*/
+/*        background-color: var(--primary-color);*/
+/*        color: var(--text-light);*/
+/*        border: none;*/
+/*        padding: 12px 24px;*/
+/*        border-radius: 8px;*/
+/*        font-weight: bold;*/
+/*        font-size: 1rem;*/
+/*        cursor: pointer;*/
+/*        transition: transform 0.1s ease, background-color 0.2s;*/
+/*    }*/
+
+/*    .action-btn:hover {*/
+/*        background-color: var(--primary-dark);*/
+/*    }*/
+
+/*    !* === GLASSMORPHISM ПЕРСОНАЛИЗАЦИЈА === *!*/
+
+/*    .custom-name-glass-card {*/
+/*        background: rgba(255, 255, 255, 0.65);*/
+/*        backdrop-filter: blur(16px) saturate(180%);*/
+/*        -webkit-backdrop-filter: blur(16px) saturate(180%);*/
+/*        border: 1px solid rgba(91, 130, 166, 0.3);*/
+/*        border-radius: 16px;*/
+/*        padding: 16px;*/
+/*        margin: 15px auto;*/
+/*        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);*/
+/*        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);*/
+/*    }*/
+
+/*    .custom-name-header h4 {*/
+/*        margin: 0 0 4px 0;*/
+/*        font-size: 1.05rem;*/
+/*        font-weight: 600;*/
+/*        color: var(--primary-dark);*/
+/*    }*/
+
+/*    .custom-name-header p {*/
+/*        margin: 0 0 14px 0;*/
+/*        font-size: 0.85rem;*/
+/*        color: var(--primary-color);*/
+/*    }*/
+
+/*    .custom-options-grid {*/
+/*        display: grid;*/
+/*        grid-template-columns: 1fr 1fr;*/
+/*        gap: 10px;*/
+/*        margin-bottom: 14px;*/
+/*    }*/
+
+/*    .glass-option-card {*/
+/*        display: flex;*/
+/*        align-items: center;*/
+/*        gap: 10px;*/
+/*        padding: 10px 12px;*/
+/*        background: rgba(255, 255, 255, 0.7);*/
+/*        border: 1px solid rgba(91, 130, 166, 0.3);*/
+/*        border-radius: 12px;*/
+/*        cursor: pointer;*/
+/*        transition: all 0.25s ease;*/
+/*        user-select: none;*/
+/*    }*/
+
+/*    .glass-option-card:hover {*/
+/*        background: rgba(255, 255, 255, 0.9);*/
+/*    }*/
+
+/*    .glass-option-card.active {*/
+/*        background: var(--primary-color) !important;*/
+/*        border-color: var(--primary-color);*/
+/*        box-shadow: 0 4px 12px rgba(91, 130, 166, 0.3);*/
+/*    }*/
+
+/*    .glass-option-card.active .option-title,*/
+/*    .glass-option-card.active .option-sub {*/
+/*        color: var(--text-light) !important;*/
+/*    }*/
+
+/*    .option-icon {*/
+/*        font-size: 1.1rem;*/
+/*        display: flex;*/
+/*        align-items: center;*/
+/*        justify-content: center;*/
+/*    }*/
+
+/*    .option-text {*/
+/*        display: flex;*/
+/*        flex-direction: column;*/
+/*        text-align: left;*/
+/*    }*/
+
+/*    .option-title {*/
+/*        font-size: 0.85rem;*/
+/*        font-weight: 600;*/
+/*        color: var(--primary-dark);*/
+/*    }*/
+
+/*    .option-sub {*/
+/*        font-size: 0.75rem;*/
+/*        color: var(--primary-color);*/
+/*    }*/
+
+/*    .option-price {*/
+/*        font-size: 0.75rem;*/
+/*        font-weight: 600;*/
+/*        color: var(--price-color);*/
+/*    }*/
+
+/*    .glass-input-wrapper {*/
+/*        margin-bottom: 14px;*/
+/*        animation: fadeIn 0.3s ease-in-out;*/
+/*    }*/
+
+/*    .glass-input-wrapper input {*/
+/*        width: 100%;*/
+/*        box-sizing: border-box;*/
+/*        padding: 10px 14px;*/
+/*        background: #FFFFFF;*/
+/*        border: 1px solid var(--primary-color);*/
+/*        border-radius: 10px;*/
+/*        font-size: 0.9rem;*/
+/*        color: var(--primary-dark);*/
+/*        outline: none;*/
+/*        text-align: center;*/
+/*        transition: all 0.2s ease;*/
+/*    }*/
+
+/*    .glass-input-wrapper input:focus {*/
+/*        background: #FFFFFF;*/
+/*        border-color: var(--primary-dark);*/
+/*        box-shadow: 0 0 0 3px rgba(91, 130, 166, 0.2);*/
+/*    }*/
+
+/*    .glass-submit-btn {*/
+/*        width: 100%;*/
+/*        padding: 12px;*/
+/*        background: var(--primary-color);*/
+/*        color: var(--text-light);*/
+/*        border: none;*/
+/*        border-radius: 10px;*/
+/*        font-size: 0.9rem;*/
+/*        font-weight: 600;*/
+/*        cursor: pointer;*/
+/*        transition: all 0.2s ease;*/
+/*        box-shadow: 0 4px 10px rgba(91, 130, 166, 0.25);*/
+/*    }*/
+
+/*    .glass-submit-btn:hover {*/
+/*        background: var(--primary-dark);*/
+/*    }*/
+
+/*    !* === СТИЛ ЗА ПАКЕТОТ === *!*/
+
+/*    .package-wrapper {*/
+/*        margin: 30px auto;*/
+/*        max-width: 90%;*/
+/*        width: 400px;*/
+/*    }*/
+
+/*    .package-box {*/
+/*        border: 3px solid var(--primary-color);*/
+/*        border-radius: 12px;*/
+/*        background-color: var(--bg-card);*/
+/*        overflow: hidden;*/
+/*        box-shadow: inset 0 0 10px rgba(0,0,0,0.05);*/
+/*    }*/
+
+/*    .package-header {*/
+/*        background-color: var(--primary-color);*/
+/*        color: var(--text-light);*/
+/*        padding: 10px;*/
+/*        font-weight: bold;*/
+/*        letter-spacing: 1px;*/
+/*    }*/
+
+/*    .package-content {*/
+/*        padding: 15px;*/
+/*        min-height: 80px;*/
+/*        display: flex;*/
+/*        flex-direction: column;*/
+/*        gap: 10px;*/
+/*    }*/
+
+/*    .empty-msg {*/
+/*        color: #777;*/
+/*        font-style: italic;*/
+/*        font-size: 0.9rem;*/
+/*        margin: auto;*/
+/*    }*/
+
+/*    .package-item-card {*/
+/*        display: flex;*/
+/*        align-items: center;*/
+/*        justify-content: space-between;*/
+/*        background-color: var(--bg-main);*/
+/*        border: 1px solid var(--primary-color);*/
+/*        border-radius: 6px;*/
+/*        padding: 8px 12px;*/
+/*    }*/
+
+/*    .card-info {*/
+/*        display: flex;*/
+/*        align-items: center;*/
+/*        gap: 10px;*/
+/*    }*/
+
+/*    .remove-btn {*/
+/*        background: none;*/
+/*        border: none;*/
+/*        color: #8B0000;*/
+/*        font-weight: bold;*/
+/*        font-size: 1.1rem;*/
+/*        cursor: pointer;*/
+/*        padding: 0 4px;*/
+/*    }*/
+
+/*    .remove-btn:hover {*/
+/*        color: red;*/
+/*    }*/
+
+/*    .checkout-btn {*/
+/*        margin-top: 15px;*/
+/*        padding: 12px 24px;*/
+/*        font-size: 1rem;*/
+/*        font-weight: bold;*/
+/*        border: none;*/
+/*        border-radius: 8px;*/
+/*        background-color: var(--primary-color);*/
+/*        color: var(--text-light);*/
+/*        cursor: pointer;*/
+/*        transition: background-color 0.3s ease, opacity 0.3s ease;*/
+/*    }*/
+
+/*    .checkout-btn:hover:not(:disabled) {*/
+/*        background-color: var(--primary-dark);*/
+/*    }*/
+
+/*    .checkout-btn:disabled {*/
+/*        background-color: var(--disabled-bg);*/
+/*        color: #666666;*/
+/*        cursor: not-allowed;*/
+/*        opacity: 0.6;*/
+/*    }*/
+
+/*    !* Лебдечко Инстаграм копче *!*/
+/*    .instagram-floating-button {*/
+/*        position: fixed;*/
+/*        bottom: 20px;*/
+/*        right: 10px;*/
+/*        z-index: 9999;*/
+/*        background-color: transparent;*/
+/*        padding: 0;*/
+/*        border-radius: 50%;*/
+/*    }*/
+
+/*    .instagram-floating-button img {*/
+/*        width: 50px;*/
+/*        height: 50px;*/
+/*        display: block;*/
+/*        object-fit: contain;*/
+/*    }*/
+
+/*    footer {*/
+/*        background-color: var(--accent-bg);*/
+/*        padding: 20px;*/
+/*        margin-top: auto;*/
+
+/*        div {*/
+/*            background-color: var(--accent-bg);*/
+/*            color: var(--primary-dark);*/
+/*        }*/
+
+/*        #copyright {*/
+/*            font-size: 10px;*/
+/*            margin-top: 5px;*/
+/*        }*/
+/*    }*/
+/*}*/
+
+/*body{*/
+/*    background-image: url('../images/parrot_paw.png');*/
+/*    background-repeat: repeat;*/
+/*}*/
+/*@keyframes fadeIn {*/
+/*    from { opacity: 0; transform: translateY(-4px); }*/
+/*    to { opacity: 1; transform: translateY(0); }*/
+/*}*/
+
+
+
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    --side-wall-color: #C8D6E3;       /* Боја на страничните ѕидови на десктоп */
+    --navbar-color: #C8D6E3;          /* Боја за навигација и футер */
+    --primary-color: #5B82A6;         /* Главна темно-сина боја за копчиња и бордери */
+    --primary-dark: #3A5A78;          /* Потемна нијанса за hover */
+    --bg-main: #F2F6FA;               /* Светла позадина */
+    --bg-card: #E8EFF5;               /* Позадина за пакетот */
+    --text-color: #2C3E50;            /* Боја на текстот */
+    --text-light: #FFFFFF;            /* Бела боја за текст */
+    --price-color: #D97706;           /* Боја за цените */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--side-wall-color);
+    background-image: radial-gradient(circle at center, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.05) 100%),
+    repeating-linear-gradient(45deg, rgba(0,0,0,0.01) 0px, rgba(0,0,0,0.01) 2px, transparent 2px, transparent 4px);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+nav {
+    background-color: var(--navbar-color);
+    width: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+nav ul {
+    background-color: var(--navbar-color);
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    justify-content: space-around;
+}
+
+nav ul li {
+    background-color: var(--navbar-color);
+    padding: 10px;
+}
+
+nav ul li a {
+    background-color: var(--navbar-color);
+    color: var(--primary-dark);
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+nav ul li a.active {
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.main-wrapper {
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--bg-main);
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.main-wrapper::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/parrot_paw.png');
+    background-repeat: repeat;
+    opacity: 0.25;
+    z-index: -1;
+}
+
+main {
+    flex: 1;
+    position: relative;
+    background-color: transparent;
+    z-index: 2;
+    padding: 20px 0;
+}
+
+h2 {
+    padding: 20px 0 10px 0;
+    color: var(--primary-dark);
+}
+
+.item img {
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+}
+
+/* === СТИЛОВИ ЗА КОПЧИЊАТА === */
+
+.button-group {
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin: 15px 0;
+}
+
+.item-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 18px;
+    border: 2px solid var(--primary-color);
+    background-color: #FFFFFF;
+    color: var(--primary-color);
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.2s ease;
+}
+
+.item-btn span {
+    color: inherit;
+}
+
+.item-btn svg {
+    display: block;
+}
+
+.item-btn:hover {
+    background-color: rgba(91, 130, 166, 0.15);
+}
+
+.item-btn.active {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+}
+
+.item-btn.active span {
+    color: var(--text-light);
+}
+
+.size-btn {
+    padding: 8px 16px;
+    border: 1px solid var(--primary-color);
+    background-color: #FFFFFF;
+    color: var(--primary-color);
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.size-btn.active,
+.size-btn:hover {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+}
+
+.action-btn {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.1s ease, background-color 0.2s;
+}
+
+.action-btn:hover {
+    background-color: var(--primary-dark);
+}
+
+/* === GLASSMORPHISM ПЕРСОНАЛИЗАЦИЈА === */
+
+.custom-name-glass-card {
+    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    border: 1px solid rgba(91, 130, 166, 0.3);
+    border-radius: 16px;
+    padding: 16px;
+    margin: 15px auto;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    max-width: 90%;
+    width: 450px;
+    box-sizing: border-box;
+    text-align: left;
+}
+
+.custom-name-header h4 {
+    margin: 0 0 4px 0;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--primary-dark);
+    text-align: center;
+}
+
+.custom-name-header p {
+    margin: 0 0 14px 0;
+    font-size: 0.85rem;
+    color: var(--primary-color);
+    text-align: center;
+}
+
+.custom-options-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 14px;
+}
+
+.glass-option-card {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(91, 130, 166, 0.3);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    user-select: none;
+}
+
+.glass-option-card:hover {
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.glass-option-card.active {
+    background: var(--primary-color) !important;
+    border-color: var(--primary-color);
+    box-shadow: 0 4px 12px rgba(91, 130, 166, 0.3);
+}
+
+.glass-option-card.active .option-title,
+.glass-option-card.active .option-sub,
+.glass-option-card.active .option-price {
+    color: var(--text-light) !important;
+}
+
+.option-icon {
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.option-text {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.option-title {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--primary-dark);
+}
+
+.option-sub {
+    font-size: 0.75rem;
+    color: var(--primary-color);
+}
+
+.option-price {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--price-color);
+}
+
+.glass-input-wrapper {
+    margin-bottom: 14px;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.glass-input-wrapper input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 14px;
+    background: #FFFFFF;
+    border: 1px solid var(--primary-color);
+    border-radius: 10px;
+    font-size: 0.9rem;
+    color: var(--primary-dark);
+    outline: none;
+    text-align: center;
+    transition: all 0.2s ease;
+}
+
+.glass-input-wrapper input:focus {
+    background: #FFFFFF;
+    border-color: var(--primary-dark);
+    box-shadow: 0 0 0 3px rgba(91, 130, 166, 0.2);
+}
+
+.glass-submit-btn {
+    width: 100%;
+    padding: 12px;
+    background: var(--primary-color);
+    color: var(--text-light) !important;
+    border: none;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 10px rgba(91, 130, 166, 0.25);
+    margin-top: 10px;
+}
+
+.glass-submit-btn:hover {
+    background: var(--primary-dark);
+}
+
+/* === СТИЛ ЗА ПАКЕТОТ === */
+
+.package-wrapper {
+    margin: 30px auto;
+    max-width: 90%;
+    width: 400px;
+}
+
+.package-box {
+    border: 3px solid var(--primary-color);
+    border-radius: 12px;
+    background-color: var(--bg-card);
+    overflow: hidden;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
+}
+
+.package-header {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    padding: 10px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.package-content {
+    padding: 15px;
+    min-height: 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.empty-msg {
+    color: #777;
+    font-style: italic;
+    font-size: 0.9rem;
+    margin: auto;
+}
+
+.package-item-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--bg-main);
+    border: 1px solid var(--primary-color);
+    border-radius: 6px;
+    padding: 8px 12px;
+}
+
+.card-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.remove-btn {
+    background: none;
+    border: none;
+    color: #8B0000;
+    font-weight: bold;
+    font-size: 1.1rem;
+    cursor: pointer;
+    padding: 0 4px;
+}
+
+.remove-btn:hover {
+    color: red;
+}
+
+.checkout-btn {
+    margin-top: 15px;
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    cursor: pointer;
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+    width: 100%;
+}
+
+.checkout-btn:hover:not(:disabled) {
+    background-color: var(--primary-dark);
+}
+
+.checkout-btn:disabled {
+    background-color: #CCCCCC;
+    color: #666666;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.instagram-floating-button {
+    position: fixed;
+    bottom: 20px;
+    right: 10px;
+    z-index: 9999;
+    background-color: transparent;
+    padding: 0;
+    border-radius: 50%;
+}
+
+.instagram-floating-button img {
+    width: 50px;
+    height: 50px;
+    display: block;
+    object-fit: contain;
+}
+
+footer {
+    background-color: var(--navbar-color);
+    padding: 20px;
+    margin-top: auto;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+footer div {
+    background-color: var(--navbar-color);
+    color: var(--primary-dark);
+}
+
+#copyright {
+    font-size: 10px;
+    margin-top: 5px;
+}
+
+.side-wall-panel {
+    display: none;
+}
+
+/* === ДЕСКОТП ПРИЛАГОДУВАЊЕ (Фиксни ѕидови во #C8D6E3) === */
+@media (min-width: 800px) {
+    body {
+        display: block;
+    }
+
+    .side-wall-panel {
+        display: flex;
+        position: fixed;
+        top: 0;
+        width: 20%;
+        height: 100vh;
+        background-color: var(--side-wall-color);
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        padding: 40px 15px;
+        box-sizing: border-box;
+        z-index: 1;
+    }
+
+    .side-wall-panel.left {
+        left: 0;
+    }
+
+    .side-wall-panel.right {
+        right: 0;
+    }
+
+    .main-wrapper {
+        width: 60%;
+        margin-left: 20%;
+        min-height: 100vh;
+        max-width: none;
+        position: relative;
+        z-index: 2;
+        box-shadow: 15px 0 25px -10px rgba(0, 0, 0, 0.15), -15px 0 25px -10px rgba(0, 0, 0, 0.15);
+    }
+
+    .moulding-frame {
+        width: 85%;
+        height: 350px;
+        background: linear-gradient(135deg, rgba(255,255,255,0.25) 0%, rgba(0,0,0,0.05) 100%), var(--side-wall-color);
+        border: 3px solid #A2B7CC;
+        border-top-color: #8CA4BC;
+        border-left-color: #8CA4BC;
+        box-shadow: inset 0 4px 10px rgba(0, 0, 0, 0.1),
+        inset 0 -4px 10px rgba(255, 255, 255, 0.5),
+        0 8px 16px rgba(0, 0, 0, 0.1);
+        position: relative;
+        box-sizing: border-box;
+    }
+
+    .moulding-frame::after {
+        content: '';
+        position: absolute;
+        top: 8px;
+        left: 8px;
+        right: 8px;
+        bottom: 8px;
+        border: 2px solid #A2B7CC;
+        box-shadow: inset 0 2px 5px rgba(0,0,0,0.08);
+        pointer-events: none;
+    }
+
+    .button-group {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+    }
+
+    .item-btn {
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 105px;
+        height: 110px;
+        background-color: #FFFFFF;
+        border: 2px solid var(--primary-color);
+        border-radius: 10px;
+        padding: 8px;
+        margin: 6px;
+        box-shadow: 0 3px 6px rgba(0,0,0,0.05);
+        transition: transform 0.2s ease;
+    }
+
+    .item-btn img, .item-btn svg {
+        width: 38px;
+        height: 38px;
+        object-fit: contain;
+        margin-bottom: 8px;
+        border: none;
+    }
+
+    .item-btn span {
+        font-size: 0.8rem;
+        font-weight: 600;
+    }
+
+    .item-btn:hover {
+        transform: translateY(-2px);
+        background-color: rgba(91, 130, 166, 0.15);
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-4px); }
+    to { opacity: 1; transform: translateY(0); }
+}

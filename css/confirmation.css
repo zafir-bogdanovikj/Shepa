@@ -1,0 +1,151 @@
+:root {
+    --theme-color: #634848; /* Дефолтна боја */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0px;
+    background-color: #f9f8f3;
+    text-align: center;
+}
+
+nav {
+    background-color: var(--theme-color);
+    padding: 15px;
+    transition: background-color 0.3s;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav ul li a {
+    color: #F1EFE8;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+main {
+    padding: 10px;
+}
+
+.confirmation-container {
+    max-width: 450px;
+    margin: 40px auto;
+    padding: 25px;
+    background-color: #ffffff;
+    border: 2px solid var(--theme-color);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease;
+}
+
+.confirmation-container h2 {
+    color: var(--theme-color);
+    margin-top: 0;
+    font-size: 1.6rem;
+    transition: color 0.3s ease;
+}
+
+.confirmation-container p {
+    color: #555;
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 18px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+    color: #333;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 1rem;
+    transition: border-color 0.2s, box-shadow 0.2s, background-color 0.2s;
+}
+
+.form-group input:focus {
+    border-color: var(--theme-color);
+    outline: none;
+    box-shadow: 0 0 5px var(--theme-color);
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--theme-color);
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: filter 0.2s, background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.submit-btn:hover {
+    filter: brightness(0.85);
+}
+
+/* Стилизирање на пораките за грешка */
+.error-message {
+    color: #d9534f;
+    font-size: 0.85rem;
+    margin-top: 4px;
+    display: block;
+    min-height: 1.2em; /* Чува простор за да не скока формата */
+}
+
+/* Црвена рамка и позадина за невалидни полиња */
+input.input-error {
+    border-color: #d9534f !important;
+    background-color: #fff8f8;
+}
+
+input.input-error:focus {
+    box-shadow: 0 0 5px #d9534f !important;
+}
+
+footer {
+    background-color: var(--theme-color);
+    color: #ffffff;
+    padding: 20px;
+    margin-top: 50px;
+    transition: background-color 0.3s ease;
+    line-height: 1.5;
+}
+
+#copyright {
+    font-size: 0.85rem;
+    opacity: 0.9;
+}
+
+/* Прилагодување за мобилни уреди */
+@media (max-width: 500px) {
+    .confirmation-container {
+        margin: 20px 10px;
+        padding: 15px;
+    }
+}
