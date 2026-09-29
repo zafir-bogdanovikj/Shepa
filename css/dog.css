@@ -72,6 +72,10 @@ nav ul li a {
 main {
     flex: 1;
     padding: 20px 0;
+    #title{
+        font-weight: bold;
+        font-size: 1.3rem;
+    }
 }
 
 /* Копчиња */
