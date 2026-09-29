@@ -5,6 +5,7 @@ function initShop(config) {
 
     let selectedItem = null;
     let selectedSizeObj = null;
+    let justAdded = false;
     let packageItems = JSON.parse(localStorage.getItem(storageKey)) || [];
 
     document.addEventListener('DOMContentLoaded', () => {
@@ -17,14 +18,27 @@ function initShop(config) {
         renderItemButtons();
         renderPackageContent();
 
+        requestAnimationFrame(() => requestAnimationFrame(() => {
+            document.querySelector('.package-wrapper')?.classList.add('ready');
+        }));
+
         const checkoutBtn = document.getElementById('checkout-btn');
         if (checkoutBtn) {
             checkoutBtn.addEventListener('click', () => {
                 if (packageItems.length >= 3) {
-                    window.location.href = `confirmation.html?pet=${petType}`;
+                    checkoutBtn.disabled = true;
+                    document.querySelector('.package-wrapper')?.classList.remove('open');
+                    setTimeout(() => {
+                        window.location.href = `confirmation.html?pet=${petType}`;
+                    }, 700);
                 }
             });
         }
+    });
+
+    // Кога корисникот се враќа назад од confirmation страната
+    window.addEventListener('pageshow', (e) => {
+        if (e.persisted) renderPackageContent();
     });
 
     function renderItemButtons() {
@@ -188,6 +202,7 @@ function initShop(config) {
             customPrice: customName ? CUSTOM_NAME_FEE : 0
         });
 
+        justAdded = true;
         renderPackageContent();
         document.querySelectorAll('.item-btn, .size-btn').forEach(b => b.classList.remove('active'));
         selectedItem = null;
@@ -202,6 +217,10 @@ function initShop(config) {
 
         localStorage.setItem(storageKey, JSON.stringify(packageItems));
 
+        // Машната се тргнува кога има барем една ставка
+        const packageWrapper = document.querySelector('.package-wrapper');
+        if (packageWrapper) packageWrapper.classList.toggle('open', packageItems.length > 0);
+
         if (packageHeader) {
             packageHeader.innerHTML = `Пакет + достава ${SHIPPING_FEE} ден.`;
         }
@@ -209,13 +228,16 @@ function initShop(config) {
         if (!packageContent || !totalPriceEl) return;
 
         packageContent.innerHTML = '';
-        let total = SHIPPING_FEE;
+        let total = packageItems.length > 0 ? SHIPPING_FEE : 0;
 
         packageItems.forEach((item, index) => {
             total += item.basePrice + item.customPrice;
 
             const card = document.createElement('div');
             card.className = 'package-item-card';
+            if (justAdded && index === packageItems.length - 1) {
+                card.classList.add('just-added');
+            }
             const sizeText = item.size ? ` (${item.size})` : '';
 
             card.innerHTML = `
@@ -236,6 +258,8 @@ function initShop(config) {
 
             packageContent.appendChild(card);
         });
+
+        justAdded = false;
 
         totalPriceEl.innerText = `Вкупно: ${total} ден.`;
 

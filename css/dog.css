@@ -1,439 +1,20 @@
-/*html {*/
-/*    scroll-behavior: smooth;*/
-/*}*/
-
-/*@media (max-width: 768px){*/
-/*    * {*/
-/*        margin: 0;*/
-/*        padding: 0;*/
-/*        box-sizing: border-box;*/
-/*        text-align: center;*/
-/*        color: #400A0A;*/
-/*        text-decoration: none;*/
-/*    }*/
-
-/*    body {*/
-/*        display: flex;*/
-/*        flex-direction: column;*/
-/*        min-height: 100vh;*/
-/*        position: relative;*/
-/*        overflow-x: hidden;*/
-/*    }*/
-/*    body::before {*/
-/*        content: "";*/
-/*        position: absolute;*/
-/*        background-color: #F1EFE8;*/
-/*        background-image: url('../images/dogPaw.png');*/
-/*        opacity: 0.1;*/
-/*        z-index: -1;*/
-/*        width: 100%;*/
-/*        height: 100%;*/
-/*    }*/
-
-/*    main {*/
-/*        flex: 1;*/
-/*    }*/
-
-/*    nav {*/
-/*        ul {*/
-/*            background-color: #634848;*/
-/*            list-style: none;*/
-/*            display: flex;*/
-/*            margin: 0;*/
-/*            padding: 0;*/
-/*            justify-content: space-around;*/
-
-/*            li {*/
-/*                background-color: #634848;*/
-/*                padding: 10px;*/
-
-/*                a {*/
-/*                    background-color: #634848;*/
-/*                    color: #F1EFE8;*/
-/*                }*/
-/*            }*/
-/*        }*/
-/*    }*/
-
-/*    h2 {*/
-/*        padding: 20px;*/
-/*    }*/
-
-/*    .item {*/
-/*        img {*/
-/*            border: 1px solid #634848;*/
-/*            border-radius: 5px;*/
-/*        }*/
-/*    }*/
-
-/*    !* === СТИЛОВИ ЗА КОПЧИЊАТА (JS ДЕЛ) === *!*/
-
-/*    .button-group {*/
-/*        padding: 5px;*/
-/*        display: flex;*/
-/*        justify-content: center;*/
-/*        gap: 12px;*/
-/*        flex-wrap: wrap;*/
-/*        margin: 15px 0;*/
-/*    }*/
-
-/*    !* Копчиња за артиклите (Коска, Чинија...) *!*/
-/*    .item-btn {*/
-/*        display: inline-flex;*/
-/*        align-items: center;*/
-/*        justify-content: center;*/
-/*        gap: 8px;*/
-/*        padding: 10px 18px;*/
-/*        border: 2px solid #634848;*/
-/*        background-color: white;*/
-/*        color: #634848;*/
-/*        border-radius: 8px;*/
-/*        cursor: pointer;*/
-/*        font-weight: bold;*/
-/*        transition: all 0.2s ease;*/
-
-/*        span {*/
-/*            color: inherit; !* Ја превзема бојата од копчето *!*/
-/*        }*/
-/*    }*/
-
-/*    .item-btn:hover {*/
-/*        background-color: rgba(99, 72, 72, 0.1);*/
-/*    }*/
-
-/*    !* Селектирано копче за артикл *!*/
-/*    .item-btn.active {*/
-/*        background-color: #634848;*/
-/*        color: #F1EFE8;*/
-
-/*        span {*/
-/*            color: #F1EFE8;*/
-/*        }*/
-/*    }*/
-
-/*    !* Копчиња за големини (Мала, Средна, Голема) *!*/
-/*    .size-btn {*/
-/*        padding: 8px 16px;*/
-/*        border: 1px solid #634848;*/
-/*        background-color: transparent;*/
-/*        color: #634848;*/
-/*        border-radius: 6px;*/
-/*        cursor: pointer;*/
-/*        font-weight: 500;*/
-/*        transition: all 0.2s ease;*/
-/*    }*/
-
-/*    .size-btn.active {*/
-/*        background-color: #634848;*/
-/*        color: #F1EFE8;*/
-/*    }*/
-/*    .action-btn {*/
-/*        background-color: #634848;*/
-/*        color: #F1EFE8;*/
-/*        border: none;*/
-/*        padding: 10px 20px;*/
-/*        border-radius: 6px;*/
-/*        font-weight: bold;*/
-/*        cursor: pointer;*/
-/*        transition: opacity 0.2s ease;*/
-/*    }*/
-
-/*    .action-btn:hover {*/
-/*        opacity: 0.9;*/
-/*    }*/
-/*    !* === СТИЛ ЗА ПАКЕТОТ === *!*/
-
-/*    .action-btn {*/
-/*        background-color: #634848;*/
-/*        color: #F1EFE8;*/
-/*        border: none;*/
-/*        padding: 12px 24px;*/
-/*        border-radius: 8px;*/
-/*        font-weight: bold;*/
-/*        font-size: 1rem;*/
-/*        cursor: pointer;*/
-/*        transition: transform 0.1s ease, background-color 0.2s;*/
-/*    }*/
-
-/*    .action-btn:hover {*/
-/*        background-color: #400A0A;*/
-/*    }*/
-
-/*    .package-wrapper {*/
-/*        margin: 30px auto;*/
-/*        max-width: 90%;*/
-/*        width: 400px;*/
-/*    }*/
-
-/*    !* Изглед на Кутијата / Пакетот *!*/
-/*    .package-box {*/
-/*        border: 3px solid #634848;*/
-/*        border-radius: 12px;*/
-/*        background-color: #e8e4d9;*/
-/*        overflow: hidden;*/
-/*        box-shadow: inset 0 0 10px rgba(0,0,0,0.05);*/
-/*    }*/
-
-/*    .package-header {*/
-/*        background-color: #634848;*/
-/*        color: #F1EFE8;*/
-/*        padding: 10px;*/
-/*        font-weight: bold;*/
-/*        letter-spacing: 1px;*/
-/*    }*/
-
-/*    .package-content {*/
-/*        padding: 15px;*/
-/*        min-height: 80px;*/
-/*        display: flex;*/
-/*        flex-direction: column;*/
-/*        gap: 10px;*/
-/*    }*/
-
-/*    .empty-msg {*/
-/*        color: #777;*/
-/*        font-style: italic;*/
-/*        font-size: 0.9rem;*/
-/*        margin: auto;*/
-/*    }*/
-
-/*    !* Картичка за ставка внатре во пакетот *!*/
-/*    .package-item-card {*/
-/*        display: flex;*/
-/*        align-items: center;*/
-/*        justify-content: space-between;*/
-/*        background-color: #F1EFE8;*/
-/*        border: 1px solid #634848;*/
-/*        border-radius: 6px;*/
-/*        padding: 8px 12px;*/
-/*    }*/
-
-/*    .card-info {*/
-/*        display: flex;*/
-/*        align-items: center;*/
-/*        gap: 10px;*/
-/*    }*/
-
-/*    .remove-btn {*/
-/*        background: none;*/
-/*        border: none;*/
-/*        color: #8b0000;*/
-/*        font-weight: bold;*/
-/*        font-size: 1.1rem;*/
-/*        cursor: pointer;*/
-/*        padding: 0 4px;*/
-/*    }*/
-
-/*    .remove-btn:hover {*/
-/*        color: red;*/
-/*    }*/
-/*    .checkout-btn {*/
-/*        margin-top: 15px;*/
-/*        padding: 12px 24px;*/
-/*        font-size: 1rem;*/
-/*        font-weight: bold;*/
-/*        border: none;*/
-/*        border-radius: 8px;*/
-/*        background-color: #634848;*/
-/*        color: #F1EFE8;*/
-/*        cursor: pointer;*/
-/*        transition: background-color 0.3s ease, opacity 0.3s ease;*/
-/*    }*/
-
-/*    .checkout-btn:hover:not(:disabled) {*/
-/*        background-color: #400A0A;*/
-/*    }*/
-
-/*    !* Кога копчето е оневозможено (помалку од 3 ставки) *!*/
-/*    .checkout-btn:disabled {*/
-/*        background-color: #cccccc;*/
-/*        color: #666666;*/
-/*        cursor: not-allowed;*/
-/*        opacity: 0.6;*/
-/*    }*/
-
-/*    footer {*/
-/*        background-color: #634848;*/
-/*        padding: 20px;*/
-
-/*        div {*/
-/*            background-color: #634848;*/
-/*            color: #F1EFE8;*/
-/*        }*/
-
-/*        #copyright {*/
-/*            font-size: 10px;*/
-/*        }*/
-/*    }*/
-/*}*/
-
-
-
-/*!* Glassmorphism Контејнер *!*/
-/*.custom-name-glass-card {*/
-/*    background: rgba(255, 255, 255, 0.45);*/
-/*    backdrop-filter: blur(16px) saturate(180%);*/
-/*    -webkit-backdrop-filter: blur(16px) saturate(180%);*/
-/*    border: 1px solid rgba(255, 255, 255, 0.6);*/
-/*    border-radius: 20px;*/
-/*    padding: 20px;*/
-/*    margin-top: 20px;*/
-/*    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);*/
-/*    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);*/
-/*}*/
-
-/*.custom-name-header h4 {*/
-/*    margin: 0 0 4px 0;*/
-/*    font-size: 1.1rem;*/
-/*    font-weight: 600;*/
-/*    color: #1d1d1f;*/
-/*    letter-spacing: -0.02em;*/
-/*}*/
-
-/*.custom-name-header p {*/
-/*    margin: 0 0 16px 0;*/
-/*    font-size: 0.85rem;*/
-/*    color: #86868b;*/
-/*}*/
-
-/*!* Избор со сегментирани картички *!*/
-/*.custom-options-grid {*/
-/*    display: grid;*/
-/*    grid-template-columns: 1fr 1fr;*/
-/*    gap: 12px;*/
-/*    margin-bottom: 16px;*/
-/*}*/
-
-/*.glass-option-card {*/
-/*    display: flex;*/
-/*    align-items: center;*/
-/*    gap: 12px;*/
-/*    padding: 12px 16px;*/
-/*    background: rgba(255, 255, 255, 0.5);*/
-/*    border: 1px solid rgba(0, 0, 0, 0.06);*/
-/*    border-radius: 14px;*/
-/*    cursor: pointer;*/
-/*    transition: all 0.25s ease;*/
-/*    user-select: none;*/
-/*}*/
-
-/*.glass-option-card:hover {*/
-/*    background: rgba(255, 255, 255, 0.8);*/
-/*    transform: translateY(-1px);*/
-/*}*/
-
-/*.glass-option-card.active {*/
-/*    background: rgba(255, 255, 255, 0.9);*/
-/*    border-color: #1d1d1f;*/
-/*    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);*/
-/*}*/
-
-/*.option-icon {*/
-/*    font-size: 1.1rem;*/
-/*    display: flex;*/
-/*    align-items: center;*/
-/*    justify-content: center;*/
-/*}*/
-
-/*.option-text {*/
-/*    display: flex;*/
-/*    flex-direction: column;*/
-/*}*/
-
-/*.option-title {*/
-/*    font-size: 0.9rem;*/
-/*    font-weight: 600;*/
-/*    color: #1d1d1f;*/
-/*}*/
-
-/*.option-sub {*/
-/*    font-size: 0.75rem;*/
-/*    color: #86868b;*/
-/*}*/
-
-/*.option-price {*/
-/*    font-size: 0.75rem;*/
-/*    font-weight: 600;*/
-/*    color: #e67e22; !* Суптилна премиум портокалова/златна нијанса *!*/
-/*}*/
-
-/*!* Влезно поле за име *!*/
-/*.glass-input-wrapper {*/
-/*    margin-bottom: 16px;*/
-/*    animation: fadeIn 0.3s ease-in-out;*/
-/*}*/
-
-/*.glass-input-wrapper input {*/
-/*    width: 100%;*/
-/*    box-sizing: border-box;*/
-/*    padding: 12px 16px;*/
-/*    background: rgba(255, 255, 255, 0.7);*/
-/*    border: 1px solid rgba(0, 0, 0, 0.1);*/
-/*    border-radius: 12px;*/
-/*    font-size: 0.95rem;*/
-/*    color: #1d1d1f;*/
-/*    outline: none;*/
-/*    backdrop-filter: blur(8px);*/
-/*    transition: all 0.2s ease;*/
-/*}*/
-
-/*.glass-input-wrapper input:focus {*/
-/*    background: #ffffff;*/
-/*    border-color: #1d1d1f;*/
-/*    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.05);*/
-/*}*/
-
-/*!* Додади копче *!*/
-/*.glass-submit-btn {*/
-/*    width: 100%;*/
-/*    padding: 14px;*/
-/*    background: #1d1d1f; !* Елегантна темна iOS/Mac естетика *!*/
-/*    color: #ffffff;*/
-/*    border: none;*/
-/*    border-radius: 14px;*/
-/*    font-size: 0.95rem;*/
-/*    font-weight: 500;*/
-/*    cursor: pointer;*/
-/*    transition: all 0.2s ease;*/
-/*    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);*/
-/*}*/
-
-/*.glass-submit-btn:hover {*/
-/*    background: #333336;*/
-/*    transform: translateY(-1px);*/
-/*    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);*/
-/*}*/
-
-/*.glass-submit-btn:active {*/
-/*    transform: translateY(0);*/
-/*}*/
-
-/*@keyframes fadeIn {*/
-/*    from { opacity: 0; transform: translateY(-4px); }*/
-/*    to { opacity: 1; transform: translateY(0); }*/
-/*}*/
-
-
-
-
 html {
     scroll-behavior: smooth;
 }
 
 :root {
-    --side-wall-color: #634848;       /* Страничните ѕидови на десктоп во #634848 */
-    --navbar-color: #634848;          /* Навигација и футер во #634848 */
-    --main-bg-color: #ffffff;
-    --text-main: #634848;
+    --brown: #634848;
+    --brown-dark: #4A3535;
+    --cream: #F1EFE8;
+    --text: #2B2020;
 }
 
 body {
     margin: 0;
-    padding: 0;
     font-family: Arial, sans-serif;
-    background-color: var(--side-wall-color);
+    background-color: var(--brown);
     background-image: radial-gradient(circle at center, rgba(255, 255, 255, 0.2) 0%, rgba(0, 0, 0, 0.08) 100%),
-    repeating-linear-gradient(45deg, rgba(0,0,0,0.015) 0px, rgba(0,0,0,0.015) 2px, transparent 2px, transparent 4px);
+    repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.015) 0, rgba(0, 0, 0, 0.015) 2px, transparent 2px, transparent 4px);
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -441,14 +22,13 @@ body {
 }
 
 nav {
-    background-color: var(--navbar-color);
+    background-color: var(--brown);
     width: 100%;
     position: relative;
     z-index: 2;
 }
 
 nav ul {
-    background-color: var(--navbar-color);
     list-style: none;
     display: flex;
     margin: 0;
@@ -457,43 +37,32 @@ nav ul {
 }
 
 nav ul li {
-    background-color: var(--navbar-color);
     padding: 10px;
 }
 
 nav ul li a {
-    background-color: var(--navbar-color);
-    color: #F1EFE8;
+    color: var(--cream);
     font-weight: 600;
     text-decoration: none;
     font-size: 1.2rem;
 }
 
-nav ul li a.active {
-    color: #ffffff;
-    font-weight: bold;
-}
-
 .main-wrapper {
     width: 100%;
     min-height: 100vh;
-    background-color: #ffffff;
+    background-color: #fff;
     position: relative;
     z-index: 2;
     display: flex;
     flex-direction: column;
     text-align: center;
     box-sizing: border-box;
-    box-shadow: none;
 }
 
 .main-wrapper::before {
     content: "";
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    inset: 0;
     background-image: url('../images/dogPaw.png');
     background-repeat: repeat;
     opacity: 0.15;
@@ -502,24 +71,10 @@ nav ul li a.active {
 
 main {
     flex: 1;
-    position: relative;
-    background-color: transparent;
-    z-index: 2;
     padding: 20px 0;
 }
 
-h2 {
-    padding: 20px 0 10px 0;
-    color: #2B2020;
-}
-
-.item img {
-    border: 1px solid #634848;
-    border-radius: 5px;
-}
-
-/* === СТИЛОВИ ЗА КОПЧИЊАТА === */
-
+/* Копчиња */
 .button-group {
     padding: 5px;
     display: flex;
@@ -534,18 +89,14 @@ h2 {
     align-items: center;
     justify-content: center;
     gap: 8px;
-    padding: 10px 18px;
-    border: 2px solid #634848;
-    background-color: #FFFFFF;
-    color: #634848;
+    padding: 10px 15px;
+    border: 2px solid var(--brown);
+    background-color: #fff;
+    color: var(--brown);
     border-radius: 8px;
     cursor: pointer;
     font-weight: bold;
     transition: all 0.2s ease;
-}
-
-.item-btn span {
-    color: inherit;
 }
 
 .item-btn svg {
@@ -553,23 +104,19 @@ h2 {
 }
 
 .item-btn:hover {
-    background-color: rgba(99, 72, 72, 0.1);
+    transform: translateY(-3px);
 }
 
 .item-btn.active {
-    background-color: #634848;
-    color: #F1EFE8;
-}
-
-.item-btn.active span {
-    color: #F1EFE8;
+    background-color: var(--brown);
+    color: var(--cream);
 }
 
 .size-btn {
     padding: 8px 16px;
-    border: 1px solid #634848;
-    background-color: #FFFFFF;
-    color: #634848;
+    border: 1px solid var(--brown);
+    background-color: #fff;
+    color: var(--brown);
     border-radius: 6px;
     cursor: pointer;
     font-weight: 500;
@@ -578,28 +125,40 @@ h2 {
 
 .size-btn.active,
 .size-btn:hover {
-    background-color: #634848;
-    color: #F1EFE8;
+    background-color: var(--brown);
+    color: var(--cream);
 }
 
-.action-btn {
-    background-color: #634848;
-    color: #F1EFE8;
+.checkout-btn,
+.glass-submit-btn {
+    background-color: var(--brown);
+    color: var(--cream);
     border: none;
-    padding: 12px 24px;
-    border-radius: 8px;
     font-weight: bold;
-    font-size: 1rem;
     cursor: pointer;
-    transition: transform 0.1s ease, background-color 0.2s;
+    transition: background-color 0.3s ease, opacity 0.3s ease;
 }
 
-.action-btn:hover {
-    background-color: #4A3535;
+.checkout-btn {
+    margin-top: 15px;
+    padding: 12px 24px;
+    font-size: 1rem;
+    border-radius: 8px;
+    width: 100%;
 }
 
-/* === GLASSMORPHISM ПЕРСОНАЛИЗАЦИЈА === */
+.checkout-btn:hover:not(:disabled) {
+    background-color: var(--brown-dark);
+}
 
+.checkout-btn:disabled {
+    background-color: #ccc;
+    color: #666;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* Персонализација */
 .custom-name-glass-card {
     background: rgba(255, 255, 255, 0.55);
     backdrop-filter: blur(16px) saturate(180%);
@@ -609,7 +168,6 @@ h2 {
     padding: 16px;
     margin: 15px auto;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     max-width: 90%;
     width: 450px;
     box-sizing: border-box;
@@ -617,17 +175,17 @@ h2 {
 }
 
 .custom-name-header h4 {
-    margin: 0 0 4px 0;
+    margin: 0 0 4px;
     font-size: 1.05rem;
     font-weight: 600;
-    color: #2B2020;
+    color: var(--text);
     text-align: center;
 }
 
 .custom-name-header p {
-    margin: 0 0 14px 0;
+    margin: 0 0 14px;
     font-size: 0.85rem;
-    color: #634848;
+    color: var(--brown);
     text-align: center;
 }
 
@@ -656,45 +214,19 @@ h2 {
 }
 
 .glass-option-card.active {
-    background: #634848 !important;
-    border-color: #634848;
+    background: var(--brown);
+    border-color: var(--brown);
     box-shadow: 0 4px 12px rgba(99, 72, 72, 0.25);
-}
-
-.glass-option-card.active .option-title,
-.glass-option-card.active .option-sub,
-.glass-option-card.active .option-price {
-    color: #F1EFE8 !important;
-}
-
-.option-icon {
-    font-size: 1.1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.option-text {
-    display: flex;
-    flex-direction: column;
-    text-align: left;
 }
 
 .option-title {
     font-size: 0.85rem;
     font-weight: 600;
-    color: #2B2020;
+    color: var(--text);
 }
 
-.option-sub {
-    font-size: 0.75rem;
-    color: #634848;
-}
-
-.option-price {
-    font-size: 0.75rem;
-    font-weight: 600;
-    color: #D97706;
+.glass-option-card.active .option-title {
+    color: var(--cream);
 }
 
 .glass-input-wrapper {
@@ -706,63 +238,137 @@ h2 {
     width: 100%;
     box-sizing: border-box;
     padding: 10px 14px;
-    background: #FFFFFF;
-    border: 1px solid #634848;
+    background: #fff;
+    border: 1px solid var(--brown);
     border-radius: 10px;
     font-size: 0.9rem;
-    color: #2B2020;
+    color: var(--text);
     outline: none;
     text-align: center;
     transition: all 0.2s ease;
 }
 
 .glass-input-wrapper input:focus {
-    background: #FFFFFF;
-    border-color: #2B2020;
+    border-color: var(--text);
     box-shadow: 0 0 0 3px rgba(99, 72, 72, 0.15);
 }
 
 .glass-submit-btn {
     width: 100%;
     padding: 12px;
-    background: #634848;
-    color: #F1EFE8 !important;
-    border: none;
     border-radius: 10px;
     font-size: 0.9rem;
     font-weight: 600;
-    cursor: pointer;
-    transition: all 0.2s ease;
     box-shadow: 0 4px 10px rgba(99, 72, 72, 0.2);
     margin-top: 10px;
 }
 
-.glass-submit-btn:hover {
-    background: #4A3535;
-}
-
-/* === СТИЛ ЗА ПАКЕТОТ === */
-
+/* Пакет */
 .package-wrapper {
-    margin: 30px auto;
+    position: relative;
+    margin: 60px auto 30px;
     max-width: 90%;
     width: 400px;
 }
 
+.package-wrapper::before {
+    content: "";
+    position: absolute;
+    top: -44px;
+    left: 50%;
+    width: 96px;
+    height: 48px;
+    transform: translateX(-50%);
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 96 48'%3E%3Cpath d='M48 30C30 4 6 2 8 20c2 16 26 14 40 10z' fill='%23400A0A'/%3E%3Cpath d='M48 30C66 4 90 2 88 20c-2 16-26 14-40 10z' fill='%23400A0A'/%3E%3Cpath d='M48 30C36 30 24 26 16 18M48 30c12 0 24-4 32-12' stroke='%23FFFFFF' stroke-opacity='.3' stroke-width='2' fill='none'/%3E%3Crect x='40' y='24' width='16' height='24' rx='5' fill='%23400A0A' stroke='%23FFFFFF' stroke-opacity='.3'/%3E%3C/svg%3E") center / contain no-repeat;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.package-wrapper.open::before {
+    opacity: 0;
+    transform: translate(-50%, -30px) rotate(-10deg) scale(0.8);
+}
+.package-wrapper::before {
+    content: "";
+    position: absolute;
+    top: -24px; /* Namaleno za da se spisti nadoolu */
+    left: 50%;
+    width: 60px; /* Prilagodena širina */
+    height: 60px; /* Prilagodena visina */
+    transform: translateX(-50%);
+    background: url("data:image/svg+xml,%3Csvg width='800px' height='800px' viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23634848' d='M447.586 34.278c8.2.042 16.652.51 25.25 1.305-18.81 11.825-47.438 25.416-75.809 35.345-19.621 6.868-39.233 12.234-55.464 14.86-10 1.617-18.485 1.793-24.758 1.267 9.46-16.636 28.867-31.502 56.191-41.146 20.184-7.124 44.389-11.352 71.092-11.623 1.16-.012 2.327-.014 3.498-.008zm-383.172 0c1.171-.006 2.337-.004 3.498.008 26.703.271 50.908 4.5 71.092 11.623 27.324 9.644 46.73 24.51 56.191 41.146-6.273.526-14.758.35-24.757-1.267-16.232-2.626-35.844-7.992-55.465-14.86-28.37-9.93-56.998-23.52-75.809-35.345 8.598-.794 17.05-1.263 25.25-1.305zm417.828 17.5c-10.731 63.387-9.774 151.122 2.854 210.18-35.275 4.762-73.838-2.481-105.834-14.924-17.386-6.761-32.812-14.983-44.6-23.235-4.285-3-8.02-6.019-11.203-8.923a63.245 63.245 0 0 0 3.34-3.557c14.844-17.115 17.859-41.615 14.031-64.781-2.39-14.463-7.447-28.663-14.908-40.76 24.99.44 54.528-7.35 83.19-17.91 27.592-10.166 53.726-23.013 73.13-36.09zm-452.484 0c19.404 13.077 45.538 25.924 73.13 36.09 28.662 10.56 58.2 18.35 83.19 17.91-7.461 12.097-12.519 26.297-14.908 40.76-3.827 23.166-.813 47.666 14.031 64.781a63.245 63.245 0 0 0 3.34 3.557c-3.183 2.904-6.918 5.924-11.203 8.923-11.788 8.252-27.214 16.474-44.6 23.235-31.996 12.443-70.559 19.686-105.834 14.924C39.532 202.9 40.49 115.165 29.758 51.778zM256 86.698c16.205 0 32.227 4.958 42.104 13.523 12.056 10.457 21.739 29.716 24.966 49.25 3.228 19.535-.004 38.68-9.869 50.055-11.469 13.224-34.123 21.07-57.201 21.07-23.078 0-45.732-7.846-57.201-21.07-9.865-11.375-13.097-30.52-9.87-50.055 3.228-19.534 12.91-38.793 24.967-49.25 9.877-8.565 25.9-13.523 42.104-13.523zm52.7 139.254c4.475 4.282 9.729 8.457 15.638 12.594 13.212 9.248 29.786 18.026 48.4 25.265 1.586.617 3.192 1.219 4.807 1.813 20.777 65.205 52.5 128.055 85.127 183.976-8.456-1.898-18.948-4.765-29.596-8.636-21.259-7.731-44.304-19.496-58.713-33.905l-11.398-11.398-3.72 15.683c-7.566 31.88-22.094 48.17-37.737 66.381-35.313-65.017-51.22-150.543-55.283-239.533 15.155-1.202 29.988-5.135 42.474-12.24zm-105.4 0c12.487 7.105 27.32 11.038 42.475 12.24-4.062 88.99-19.97 174.516-55.283 239.533-15.643-18.21-30.17-34.502-37.736-66.38l-3.72-15.684-11.4 11.398c-14.408 14.41-37.453 26.174-58.712 33.905-10.648 3.871-21.14 6.738-29.596 8.636 32.626-55.92 64.35-118.771 85.127-183.976 1.615-.594 3.22-1.196 4.807-1.813 18.614-7.239 35.188-16.017 48.4-25.265 5.91-4.137 11.163-8.312 15.639-12.594z'/></svg>") center / contain no-repeat;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.package-wrapper.ready::before {
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Лентите преку пакетот (вертикална и хоризонтална, по средина) */
+.package-box::before,
+.package-box::after {
+    content: "";
+    position: absolute;
+    background: rgba(99, 72, 72, 0.9);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.package-box::before {
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 20px;
+    transform: translateX(-50%);
+}
+
+.package-box::after {
+    left: 0;
+    right: 0;
+    top: 50%;
+    height: 20px;
+    transform: translateY(-50%);
+}
+
+.package-wrapper.open .package-box::before,
+.package-wrapper.open .package-box::after {
+    opacity: 0;
+}
+
+.package-wrapper.ready .package-box::before,
+.package-wrapper.ready .package-box::after {
+    transition: opacity 0.5s ease;
+}
+
 .package-box {
-    border: 3px solid #634848;
+    border: 3px solid var(--brown);
     border-radius: 12px;
     background-color: #E8E2D5;
     overflow: hidden;
-    box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
+    position: relative;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05);
 }
 
 .package-header {
-    background-color: #634848;
-    color: #F1EFE8;
-    padding: 10px;
+    background-color: var(--brown);
+    color: var(--cream);
+    padding: 0 10px;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
     font-weight: bold;
     letter-spacing: 1px;
+}
+
+.package-wrapper.open .package-header {
+    padding: 10px;
+    max-height: 80px;
+    opacity: 1;
+}
+
+.package-wrapper.ready .package-header {
+    transition: max-height 0.5s ease, padding 0.5s ease, opacity 0.5s ease;
 }
 
 .package-content {
@@ -771,6 +377,15 @@ h2 {
     display: flex;
     flex-direction: column;
     gap: 10px;
+}
+
+.package-item-card.just-added {
+    animation: dropIn 0.5s ease both;
+}
+
+@keyframes dropIn {
+    from { opacity: 0; transform: translateY(-40px) scale(0.8); }
+    to { opacity: 1; transform: none; }
 }
 
 .empty-msg {
@@ -784,8 +399,8 @@ h2 {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #F1EFE8;
-    border: 1px solid #634848;
+    background-color: var(--cream);
+    border: 1px solid var(--brown);
     border-radius: 6px;
     padding: 8px 12px;
 }
@@ -810,59 +425,13 @@ h2 {
     color: red;
 }
 
-.checkout-btn {
-    margin-top: 15px;
-    padding: 12px 24px;
-    font-size: 1rem;
-    font-weight: bold;
-    border: none;
-    border-radius: 8px;
-    background-color: #634848;
-    color: #F1EFE8;
-    cursor: pointer;
-    transition: background-color 0.3s ease, opacity 0.3s ease;
-    width: 100%;
-}
-
-.checkout-btn:hover:not(:disabled) {
-    background-color: #4A3535;
-}
-
-.checkout-btn:disabled {
-    background-color: #CCCCCC;
-    color: #666666;
-    cursor: not-allowed;
-    opacity: 0.6;
-}
-
-.instagram-floating-button {
-    position: fixed;
-    bottom: 20px;
-    right: 10px;
-    z-index: 9999;
-    background-color: transparent;
-    padding: 0;
-    border-radius: 50%;
-}
-
-.instagram-floating-button img {
-    width: 50px;
-    height: 50px;
-    display: block;
-    object-fit: contain;
-}
-
 footer {
-    background-color: var(--navbar-color);
+    background-color: var(--brown);
+    color: var(--cream);
     padding: 20px;
     margin-top: auto;
     width: 100%;
     box-sizing: border-box;
-}
-
-footer div {
-    background-color: var(--navbar-color);
-    color: #F1EFE8;
 }
 
 #copyright {
@@ -874,8 +443,46 @@ footer div {
     display: none;
 }
 
-/* === ДЕСКОТП ПРИЛАГОДУВАЊЕ (Фиксни ѕидови во #634848) === */
-@media (min-width: 800px) {
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-4px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Таблет и десктоп: квадратни копчиња */
+@media (min-width: 450px) {
+    .item-btn {
+        flex-direction: column;
+        aspect-ratio: 1 / 1;
+        background-color: #faf8f5;
+        border-radius: 10px;
+        padding: 8px;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
+    }
+
+    .item-btn.active {
+        background-color: var(--brown);
+    }
+
+    .item-btn svg {
+        object-fit: contain;
+        margin-bottom: 8px;
+    }
+}
+
+@media (min-width: 450px) and (max-width: 1024px) {
+    .item-btn {
+        width: calc(20% - 12px);
+        margin: 6px;
+    }
+
+    .item-btn svg {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+/* Десктоп: странични ѕидови */
+@media (min-width: 1025px) {
     body {
         display: block;
     }
@@ -886,7 +493,7 @@ footer div {
         top: 0;
         width: 20%;
         height: 100vh;
-        background-color: var(--side-wall-color);
+        background-color: var(--brown);
         flex-direction: column;
         justify-content: space-around;
         align-items: center;
@@ -906,18 +513,14 @@ footer div {
     .main-wrapper {
         width: 60%;
         margin-left: 20%;
-        min-height: 100vh;
-        max-width: none;
-        position: relative;
-        z-index: 2;
         box-shadow: 15px 0 25px -10px rgba(0, 0, 0, 0.15), -15px 0 25px -10px rgba(0, 0, 0, 0.15);
     }
 
     .moulding-frame {
         width: 85%;
         height: 350px;
-        background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.1) 100%), var(--side-wall-color);
-        border: 3px solid #4A3535;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(0, 0, 0, 0.1) 100%), var(--brown);
+        border: 3px solid var(--brown-dark);
         border-top-color: #382727;
         border-left-color: #382727;
         box-shadow: inset 0 4px 10px rgba(0, 0, 0, 0.2),
@@ -930,58 +533,32 @@ footer div {
     .moulding-frame::after {
         content: '';
         position: absolute;
-        top: 8px;
-        left: 8px;
-        right: 8px;
-        bottom: 8px;
-        border: 2px solid #4A3535;
-        box-shadow: inset 0 2px 5px rgba(0,0,0,0.15);
+        inset: 8px;
+        border: 2px solid var(--brown-dark);
+        box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.15);
         pointer-events: none;
     }
 
     .button-group {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
         gap: 8px;
     }
 
     .item-btn {
-        display: inline-flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        width: 105px;
-        height: 110px;
-        background-color: #faf8f5;
-        border: 2px solid #634848;
-        border-radius: 10px;
-        padding: 8px;
-        margin: 6px;
-        box-shadow: 0 3px 6px rgba(0,0,0,0.05);
-        transition: transform 0.2s ease;
+        width: calc(18% - 10px);
+        margin: 5px;
     }
 
-    .item-btn img, .item-btn svg {
-        width: 38px;
-        height: 38px;
-        object-fit: contain;
-        margin-bottom: 8px;
-        border: none;
+    .item-btn:hover {
+        transform: translateY(-5px);
+    }
+
+    .item-btn svg {
+        width: 40px;
+        height: 40px;
     }
 
     .item-btn span {
         font-size: 0.8rem;
         font-weight: 600;
     }
-
-    .item-btn:hover {
-        transform: translateY(-2px);
-        background-color: rgba(99, 72, 72, 0.1);
-    }
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-4px); }
-    to { opacity: 1; transform: translateY(0); }
 }

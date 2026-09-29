@@ -1,38 +1,12 @@
 :root {
-    --theme-color: #634848; /* Дефолтна боја */
+    --theme-color: #634848;
 }
 
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    padding: 0px;
     background-color: #f9f8f3;
     text-align: center;
-}
-
-nav {
-    background-color: var(--theme-color);
-    padding: 15px;
-    transition: background-color 0.3s;
-}
-
-nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-nav ul li a {
-    color: #F1EFE8;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-nav ul li a:hover {
-    text-decoration: underline;
 }
 
 main {
@@ -109,16 +83,14 @@ main {
     filter: brightness(0.85);
 }
 
-/* Стилизирање на пораките за грешка */
 .error-message {
     color: #d9534f;
     font-size: 0.85rem;
     margin-top: 4px;
     display: block;
-    min-height: 1.2em; /* Чува простор за да не скока формата */
+    min-height: 1.2em;
 }
 
-/* Црвена рамка и позадина за невалидни полиња */
 input.input-error {
     border-color: #d9534f !important;
     background-color: #fff8f8;
@@ -142,7 +114,6 @@ footer {
     opacity: 0.9;
 }
 
-/* Прилагодување за мобилни уреди */
 @media (max-width: 500px) {
     .confirmation-container {
         margin: 20px 10px;
